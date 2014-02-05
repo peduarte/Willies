@@ -36,7 +36,7 @@ h1 { font-weight: 400; }
 	height: 150px;
 	width: 60px;
 	margin-left: -30px;
-	@include prefixr(transition, all 2s linear);
+	@include prefixr(transition, all 12s linear);
 	@include prefixr(transform-origin, bottom center);
 
 
