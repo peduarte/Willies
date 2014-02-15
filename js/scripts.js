@@ -3,8 +3,8 @@ $(function () {
   var $body = $('body');
   var $wrapper = $('.wrapper');
   var i = 0;
-  var erectionCount = 100;
-  var cumCount = 300;
+  var erectionCount = 1;
+  var cumCount = 2;
   var finishedComing = false;
   var pfx = ['webkit', 'moz', 'MS', 'o', ''];
   var anim = document.getElementById('drop--main');

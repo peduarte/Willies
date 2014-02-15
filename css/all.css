@@ -33,8 +33,9 @@ h1 {
 .willy {
   background: #fbd7bf;
   position: absolute;
-  bottom: -225px;
+  bottom: 0;
   left: 50%;
+  z-index: 2;
   height: 450px;
   width: 150px;
   margin-left: -75px;
@@ -105,108 +106,132 @@ h1 {
   border-radius: 50%;
 }
 
+.drops {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 .drop {
   background: #fff;
   width: 12px;
   position: absolute;
-  top: -160px;
+  left: 50%;
+  margin-left: -6px;
+  bottom: 550px;
   border-radius: 6px;
-  opacity: 0;
   height: 0;
-}
-.came .drop {
-  opacity: 1;
-  -webkit-transition: height linear 1s 0;
-  -moz-transition: height linear 1s 0;
-  -ms-transition: height linear 1s 0;
-  transition: height linear 1s 0;
-  -webkit-transition-origin: center bottom;
-  -moz-transition-origin: center bottom;
-  -ms-transition-origin: center bottom;
-  transition-origin: center bottom;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transition: height 600ms linear;
+  -moz-transition: height 600ms linear;
+  -ms-transition: height 600ms linear;
+  transition: height 600ms linear;
 }
 
 .came .drop--1,
 .came .drop--9 {
   height: 80px;
-  margin-top: 20px;
 }
 .came .drop--1 {
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  right: -20px;
+  -webkit-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  -moz-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  -ms-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  transform: rotate(45deg) translate3d(60px, -20px, 0);
 }
 .came .drop--9 {
-  -webkit-transform: rotate(-45deg);
-  -moz-transform: rotate(-45deg);
-  -ms-transform: rotate(-45deg);
-  transform: rotate(-45deg);
-  left: -20px;
+  -webkit-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  -moz-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  -ms-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  transform: rotate(-45deg) translate3d(-60px, -20px, 0);
 }
 .came .drop--2,
 .came .drop--8 {
   height: 120px;
-  margin-top: -40px;
 }
 .came .drop--2 {
-  -webkit-transform: rotate(35deg);
-  -moz-transform: rotate(35deg);
-  -ms-transform: rotate(35deg);
-  transform: rotate(35deg);
-  right: 0;
+  -webkit-transform: rotate(35deg) translate3d(40px, 0, 0);
+  -moz-transform: rotate(35deg) translate3d(40px, 0, 0);
+  -ms-transform: rotate(35deg) translate3d(40px, 0, 0);
+  transform: rotate(35deg) translate3d(40px, 0, 0);
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  transition-delay: 500ms;
 }
 .came .drop--8 {
-  -webkit-transform: rotate(-35deg);
-  -moz-transform: rotate(-35deg);
-  -ms-transform: rotate(-35deg);
-  transform: rotate(-35deg);
-  left: 0;
+  -webkit-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -moz-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -ms-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -ms-transition-delay: 700ms;
+  transition-delay: 700ms;
 }
 .came .drop--3,
 .came .drop--7 {
   height: 180px;
-  margin-top: -110px;
 }
 .came .drop--3 {
-  -webkit-transform: rotate(20deg);
-  -moz-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-  right: 20px;
+  -webkit-transform: rotate(20deg) translate3d(20px, 0, 0);
+  -moz-transform: rotate(20deg) translate3d(20px, 0, 0);
+  -ms-transform: rotate(20deg) translate3d(20px, 0, 0);
+  transform: rotate(20deg) translate3d(20px, 0, 0);
+  -webkit-transition-delay: 900ms;
+  -moz-transition-delay: 900ms;
+  -ms-transition-delay: 900ms;
+  transition-delay: 900ms;
 }
 .came .drop--7 {
-  -webkit-transform: rotate(-20deg);
-  -moz-transform: rotate(-20deg);
-  -ms-transform: rotate(-20deg);
-  transform: rotate(-20deg);
-  left: 20px;
+  -webkit-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -moz-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -ms-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -webkit-transition-delay: 1100ms;
+  -moz-transition-delay: 1100ms;
+  -ms-transition-delay: 1100ms;
+  transition-delay: 1100ms;
 }
 .came .drop--4,
 .came .drop--6 {
   height: 100px;
-  margin-top: -50px;
 }
 .came .drop--4 {
-  -webkit-transform: rotate(40deg);
-  -moz-transform: rotate(40deg);
-  -ms-transform: rotate(40deg);
-  transform: rotate(40deg);
-  right: -45px;
+  -webkit-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -moz-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -ms-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -webkit-transition-delay: 1300ms;
+  -moz-transition-delay: 1300ms;
+  -ms-transition-delay: 1300ms;
+  transition-delay: 1300ms;
 }
 .came .drop--6 {
-  -webkit-transform: rotate(-40deg);
-  -moz-transform: rotate(-40deg);
-  -ms-transform: rotate(-40deg);
-  transform: rotate(-40deg);
-  left: -45px;
+  -webkit-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -moz-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -ms-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -webkit-transition-delay: 1500ms;
+  -moz-transition-delay: 1500ms;
+  -ms-transition-delay: 1500ms;
+  transition-delay: 1500ms;
 }
-.came .drop--main {
+
+.drop--main {
   width: 24px;
   height: 800px;
-  left: 50%;
-  top: -910px;
   margin-left: -12px;
   border-radius: 12px;
+  bottom: -800px;
+  -webkit-transition: bottom 2000ms 1600ms ease;
+  -moz-transition: bottom 2000ms 1600ms ease;
+  -ms-transition: bottom 2000ms 1600ms ease;
+  transition: bottom 2000ms 1600ms ease;
+}
+.came .drop--main {
+  bottom: 550px;
 }

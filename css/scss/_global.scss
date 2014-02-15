@@ -30,8 +30,10 @@ h1 { font-weight: 400; }
 	background: #fbd7bf;
 
 	position: absolute;
-	bottom: -($willyHeight/2);
+	// bottom: -($willyHeight/2);
+	bottom: 0;
 	left: 50%;
+	z-index: 2;
 
 	height: $willyHeight;
 	width: $willyWidth;
@@ -124,101 +126,106 @@ h1 { font-weight: 400; }
 
 
 // DROOOOOOPS...
+.drops {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+}
+
 .drop {
 	background: #fff;
 	width: 12px;
 
 	position: absolute;
-	top: -160px;
+	left: 50%;
+	margin-left: -6px;
+	// bottom: $willyHeight - 120;
+	bottom: $willyHeight + 100;
 
 	border-radius: 6px;
 
-	opacity: 0;
+	// opacity: 0;
 
 	height: 0;
-
-	.came & {
-		opacity: 1;
-		@include prefixr(transition, height linear 1s 0);
-		@include prefixr(transition-origin, center bottom);
-	}
-
+	@include prefixr(transform-origin, bottom center);
+	@include prefixr(transition, height 600ms linear);
 }
 
+
+// Drops styles in 2 from opposite directions...
 .came {
-	// Drops styles in 2 from opposite directions...
 	.drop--1,
 	.drop--9 {
 		height: 80px;
-		margin-top: 20px;
 	}
 	.drop--1 {
-		@include prefixr(transform, rotate(45deg));
-		right: -20px;
+		@include prefixr(transform, rotate(45deg) translate3d(60px, -20px, 0));
 	}
 
 	.drop--9 {
-		@include prefixr(transform, rotate(-45deg));
-		left: -20px;
+		@include prefixr(transform, rotate(-45deg) translate3d(-60px, -20px, 0));
 	}
 
 
 	.drop--2,
 	.drop--8 {
 		height: 120px;
-		margin-top: -40px;
 	}
 
 	.drop--2 {
-		@include prefixr(transform, rotate(35deg));
-		right: 0;
+		@include prefixr(transform, rotate(35deg) translate3d(40px, 0, 0));
+		@include prefixr(transition-delay, 500ms);
 	}
 
 	.drop--8 {
-		@include prefixr(transform, rotate(-35deg));
-		left: 0;
+		@include prefixr(transform, rotate(-35deg) translate3d(-40px, 0, 0));
+		@include prefixr(transition-delay, 700ms);
 	}
 
 
 	.drop--3,
 	.drop--7 {
 		height: 180px;
-		margin-top: -110px;
 	}
 
 	.drop--3 {
-		@include prefixr(transform, rotate(20deg));
-		right: 20px;
+		@include prefixr(transform, rotate(20deg) translate3d(20px, 0, 0));
+		@include prefixr(transition-delay, 900ms);
 	}
 
 	.drop--7 {
-		@include prefixr(transform, rotate(-20deg));
-		left: 20px;
+		@include prefixr(transform, rotate(-20deg) translate3d(-20px, 0, 0));
+		@include prefixr(transition-delay, 1100ms);
 	}
 
 	.drop--4,
 	.drop--6 {
 		height: 100px;
-		margin-top: -50px;
 	}
 
 	.drop--4 {
-		@include prefixr(transform, rotate(40deg));
-		right: -45px;
+		@include prefixr(transform, rotate(40deg) translate3d(50px, -80px, 0));
+		@include prefixr(transition-delay, 1300ms);
 	}
 
 	.drop--6 {
-		@include prefixr(transform, rotate(-40deg));
-		left: -45px;
-	}
-
-	.drop--main {
-		width: 24px;
-		height: 800px;
-		left: 50%;
-		top: -910px;
-		margin-left: -12px;
-		border-radius: 12px;
+		@include prefixr(transform, rotate(-40deg) translate3d(-50px, -80px, 0));
+		@include prefixr(transition-delay, 1500ms);
 	}
 }
 
+.drop--main {
+	width: 24px;
+	height: 800px;
+	margin-left: -12px;
+	border-radius: 12px;
+	bottom: -800px;
+
+
+	@include prefixr(transition, bottom 2000ms 1600ms ease);
+
+	.came & {
+		bottom: $willyHeight + 100;
+	}
+}
