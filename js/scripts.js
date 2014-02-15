@@ -1,44 +1,56 @@
 $(function () {
 
-	var $body = $('body');
-	var $wrapper = $('.wrapper');
-	var i = 0;
-	var erectionCount = 100;
-	var erected = false;
+  var $body = $('body');
+  var $wrapper = $('.wrapper');
+  var i = 0;
+  var erectionCount = 100;
+  var cumCount = 300;
+  var finishedComing = false;
+  var pfx = ['webkit', 'moz', 'MS', 'o', ''];
+  var anim = document.getElementById('drop--main');
 
-	$body[0].addEventListener('mousedown', onMouseDown, false);
-	$body[0].addEventListener('mouseup', onMouseUp, false);
+  $body[0].addEventListener('mousedown', onMouseDown, false);
+  $body[0].addEventListener('mouseup', onMouseUp, false);
 
 
-	function onMouseDown () {
-		if (erected) { return; }
-		$body[0].addEventListener('mousemove', onMouseMove, false);
-	}
+  function onMouseDown () {
+    if (finishedComing) { return; }
+    $body[0].addEventListener('mousemove', onMouseMove, false);
+  }
 
-	function onMouseMove () {
-		i++;
+  function onMouseMove () {
+    i++;
 
-		applyTransforms(10);
+    applyTransforms(10);
 
-		if (i > erectionCount) {
-			erected = true;
-			$body.addClass('erected');
-			onMouseUp();
-		}
-	}
+    if (i > erectionCount) {
+      $body.addClass('erected');
 
-	function onMouseUp () {
-		$body[0].removeEventListener('mousemove', onMouseMove, false);
-	}
+    }
 
-	function applyTransforms(position) {
-		console.log('transform -> ');
-	  $wrapper.css({
-	    '-webkit-transform': 'translate3d(' + getRandomInt(-position/4, position/4) + 'px, ' + getRandomInt(-position, position) + 'px, 0)',
-      '-moz-transform': 'translate3d(' + getRandomInt(-position/4, position/4) + 'px, ' + getRandomInt(-position, position) + 'px, 0)',
-      'transform': 'translate3d(' + getRandomInt(-position/4, position/4) + 'px, ' + getRandomInt(-position, position) + 'px, 0)'
-	  });
-	}
+    if (i > cumCount){
+      console.log('cuuuum -> ');
+      $body.addClass('came');
+      onMouseUp();
+    }
+  }
+
+  function onMouseUp () {
+    $body[0].removeEventListener('mousemove', onMouseMove, false);
+  }
+
+  function applyTransforms(position) {
+    $wrapper.css({
+      '-webkit-transform': 'translate3d(' + getRandomInt(-position*0.1, position*0.1) + 'px, ' + getRandomInt(-position, position) + 'px, 0)',
+      '-moz-transform': 'translate3d(' + getRandomInt(-position*0.1, position*0.1) + 'px, ' + getRandomInt(-position, position) + 'px, 0)',
+      'transform': 'translate3d(' + getRandomInt(-position*0.1, position*0.1) + 'px, ' + getRandomInt(-position, position) + 'px, 0)'
+    });
+  }
+
+  function climax () {
+    console.log('climax -> ');
+    finishedComing = true;
+  }
 
   function getRandomInt (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -51,8 +63,8 @@ $(function () {
     }
   }
 
- /* PrefixedEvent(anim, 'AnimationEnd', function () {
+  PrefixedEvent(anim, 'AnimationEnd', function () {
     climax();
-  });*/
+  });
 
 });
