@@ -1,0 +1,317 @@
+/* line 3, ../../src/styles/main.scss */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 5, ../../src/styles/main.scss */
+html {
+  background: #fbdac4;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* line 11, ../../src/styles/main.scss */
+body {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-family: 'Gentium Basic', serif;
+  color: #5D5D5D;
+  font-style: italic;
+}
+
+/* line 22, ../../src/styles/main.scss */
+h1 {
+  font-weight: 400;
+}
+
+/* line 25, ../../src/styles/main.scss */
+.wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 31, ../../src/styles/main.scss */
+.willy {
+  background: #fbd7bf;
+  position: absolute;
+  bottom: -225px;
+  left: 50%;
+  z-index: 2;
+  height: 450px;
+  width: 150px;
+  margin-left: -75px;
+  box-shadow: 0 175px 300px 50px #fbb9c0;
+  -webkit-transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -ms-transition: all 1s linear;
+  transition: all 1s linear;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+}
+/* line 49, ../../src/styles/main.scss */
+.willy:before, .willy:after {
+  content: '';
+  display: block;
+  background: #deb2ad;
+  position: absolute;
+  left: 50px;
+  top: 150px;
+  width: 6px;
+  height: 75px;
+  border-radius: 3px;
+}
+/* line 64, ../../src/styles/main.scss */
+.willy:after {
+  left: 100px;
+  top: 300px;
+}
+/* line 70, ../../src/styles/main.scss */
+.erected .willy {
+  bottom: 0;
+}
+
+/* line 76, ../../src/styles/main.scss */
+.head {
+  background: #fbc9c4;
+  width: 100%;
+  padding-top: 100%;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: -50%;
+  border-radius: 50%;
+  box-shadow: 0 6px 0px 0 #deb2ad;
+  overflow: hidden;
+}
+/* line 94, ../../src/styles/main.scss */
+.head:after {
+  content: '';
+  display: block;
+  background: #f7758d;
+  width: 6px;
+  height: 50%;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  margin-left: -3px;
+  border-radius: 3px;
+}
+/* line 111, ../../src/styles/main.scss */
+.head:before {
+  content: '';
+  display: block;
+  background: #fbb9c0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 88%;
+  height: 88%;
+  margin-left: -44%;
+  border-radius: 50%;
+}
+
+/* line 130, ../../src/styles/main.scss */
+.drops {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+/* line 137, ../../src/styles/main.scss */
+.drop {
+  background: #fff;
+  width: 12px;
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  bottom: 550px;
+  border-radius: 6px;
+  height: 0;
+  -webkit-transform-origin: bottom center;
+  -moz-transform-origin: bottom center;
+  -ms-transform-origin: bottom center;
+  transform-origin: bottom center;
+  -webkit-transition: height 600ms linear;
+  -moz-transition: height 600ms linear;
+  -ms-transition: height 600ms linear;
+  transition: height 600ms linear;
+}
+
+/* line 160, ../../src/styles/main.scss */
+.came .drop--1,
+.came .drop--9 {
+  height: 80px;
+}
+/* line 163, ../../src/styles/main.scss */
+.came .drop--1 {
+  -webkit-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  -moz-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  -ms-transform: rotate(45deg) translate3d(60px, -20px, 0);
+  transform: rotate(45deg) translate3d(60px, -20px, 0);
+}
+/* line 167, ../../src/styles/main.scss */
+.came .drop--9 {
+  -webkit-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  -moz-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  -ms-transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+  transform: rotate(-45deg) translate3d(-60px, -20px, 0);
+}
+/* line 173, ../../src/styles/main.scss */
+.came .drop--2,
+.came .drop--8 {
+  height: 120px;
+}
+/* line 177, ../../src/styles/main.scss */
+.came .drop--2 {
+  -webkit-transform: rotate(35deg) translate3d(40px, 0, 0);
+  -moz-transform: rotate(35deg) translate3d(40px, 0, 0);
+  -ms-transform: rotate(35deg) translate3d(40px, 0, 0);
+  transform: rotate(35deg) translate3d(40px, 0, 0);
+  -webkit-transition-delay: 500ms;
+  -moz-transition-delay: 500ms;
+  -ms-transition-delay: 500ms;
+  transition-delay: 500ms;
+}
+/* line 182, ../../src/styles/main.scss */
+.came .drop--8 {
+  -webkit-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -moz-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -ms-transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  transform: rotate(-35deg) translate3d(-40px, 0, 0);
+  -webkit-transition-delay: 700ms;
+  -moz-transition-delay: 700ms;
+  -ms-transition-delay: 700ms;
+  transition-delay: 700ms;
+}
+/* line 189, ../../src/styles/main.scss */
+.came .drop--3,
+.came .drop--7 {
+  height: 180px;
+}
+/* line 193, ../../src/styles/main.scss */
+.came .drop--3 {
+  -webkit-transform: rotate(20deg) translate3d(20px, 0, 0);
+  -moz-transform: rotate(20deg) translate3d(20px, 0, 0);
+  -ms-transform: rotate(20deg) translate3d(20px, 0, 0);
+  transform: rotate(20deg) translate3d(20px, 0, 0);
+  -webkit-transition-delay: 900ms;
+  -moz-transition-delay: 900ms;
+  -ms-transition-delay: 900ms;
+  transition-delay: 900ms;
+}
+/* line 198, ../../src/styles/main.scss */
+.came .drop--7 {
+  -webkit-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -moz-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -ms-transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  transform: rotate(-20deg) translate3d(-20px, 0, 0);
+  -webkit-transition-delay: 1100ms;
+  -moz-transition-delay: 1100ms;
+  -ms-transition-delay: 1100ms;
+  transition-delay: 1100ms;
+}
+/* line 204, ../../src/styles/main.scss */
+.came .drop--4,
+.came .drop--6 {
+  height: 100px;
+}
+/* line 208, ../../src/styles/main.scss */
+.came .drop--4 {
+  -webkit-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -moz-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -ms-transform: rotate(40deg) translate3d(50px, -80px, 0);
+  transform: rotate(40deg) translate3d(50px, -80px, 0);
+  -webkit-transition-delay: 1300ms;
+  -moz-transition-delay: 1300ms;
+  -ms-transition-delay: 1300ms;
+  transition-delay: 1300ms;
+}
+/* line 213, ../../src/styles/main.scss */
+.came .drop--6 {
+  -webkit-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -moz-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -ms-transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  transform: rotate(-40deg) translate3d(-50px, -80px, 0);
+  -webkit-transition-delay: 1500ms;
+  -moz-transition-delay: 1500ms;
+  -ms-transition-delay: 1500ms;
+  transition-delay: 1500ms;
+}
+
+/* line 219, ../../src/styles/main.scss */
+.drop--main {
+  width: 24px;
+  height: 800px;
+  margin-left: -12px;
+  border-radius: 12px;
+  bottom: -800px;
+  -webkit-transition: bottom 2000ms 1600ms ease;
+  -moz-transition: bottom 2000ms 1600ms ease;
+  -ms-transition: bottom 2000ms 1600ms ease;
+  transition: bottom 2000ms 1600ms ease;
+}
+/* line 229, ../../src/styles/main.scss */
+.came .drop--main {
+  bottom: 550px;
+}
+
+/* line 235, ../../src/styles/main.scss */
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  z-index: 3;
+  top: -100%;
+  left: 0;
+  text-align: center;
+  -webkit-transition: top 1000ms ease;
+  -moz-transition: top 1000ms ease;
+  -ms-transition: top 1000ms ease;
+  transition: top 1000ms ease;
+}
+/* line 247, ../../src/styles/main.scss */
+.climax .overlay {
+  top: 0;
+}
+
+/* line 255, ../../src/styles/main.scss */
+.overlay h1 {
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+@media only screen and (min-width: 960px) {
+  /* line 255, ../../src/styles/main.scss */
+  .overlay h1 {
+    font-size: 60px;
+  }
+}
+/* line 266, ../../src/styles/main.scss */
+.overlay p {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  font-size: 14px;
+}
+@media only screen and (min-width: 960px) {
+  /* line 266, ../../src/styles/main.scss */
+  .overlay p {
+    font-size: 20px;
+  }
+}
+/* line 277, ../../src/styles/main.scss */
+.overlay a {
+  color: #5D5D5D;
+  text-decoration: underline;
+}

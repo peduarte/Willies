@@ -1,0 +1,9 @@
+{
+  "sourcePath": "src",
+  "buildPath": "build",
+  "tempPath": ".tmp",
+  "toolsPath": "tools",
+  "hostname": "localhost",
+  "port": 9000,
+  "testport": 9001
+}
