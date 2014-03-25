@@ -10,6 +10,7 @@ $(function () {
   var pfx = ['webkit', 'moz', 'MS', 'o', ''];
   var anim = document.getElementById('drop--main');
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
+  var hasVibrate = 'vibrate' in navigator;
   var $tchau = $('#tchau');
   var lastX = 0;
   var lastY = 0;
@@ -18,6 +19,7 @@ $(function () {
     'Please come again.',
     'Was it good for you?'
   ];
+
 
   function onMouseDown () {
     if (finishedComing) { return; }
@@ -53,11 +55,17 @@ $(function () {
 
     if (i > erectionCount) {
       $body.addClass('erected');
+      if (hasVibrate) {
+        navigator.vibrate(1000);
+      }
 
     }
 
     if (i > cumCount){
       $body.addClass('came');
+      if (hasVibrate) {
+        navigator.vibrate([500, 500, 1000, 500, 2000]);
+      }
 
       clearMovements();
     }
