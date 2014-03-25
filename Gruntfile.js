@@ -180,10 +180,7 @@ module.exports = function(grunt) {
       },
       deploy: {
         command: function() {
-          var environment = grunt.option('env') || 'dev';
-          grunt.log.ok('deploying to ' + environment);
-          grunt.log.warn('Please implement your own deployment script');
-          return 'echo call something from the shell for example';
+          return 'bash deploy-to-github.sh';
         }
       }
     },
