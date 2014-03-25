@@ -11,6 +11,8 @@ $(function () {
   var anim = document.getElementById('drop--main');
   var isTouch = (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0));
   var $tchau = $('#tchau');
+  var lastX = 0;
+  var lastY = 0;
   var tchauMessages = [
     'Thank you for coming.',
     'Please come again.',
@@ -26,20 +28,20 @@ $(function () {
     i++;
 
     applyTransforms(10);
-
-    if (i > erectionCount) {
-      $body.addClass('erected');
-
-    }
-
-    if (i > cumCount){
-      $body.addClass('came');
-      onMouseUp();
-    }
   }
 
   function onMouseUp () {
     $body[0].removeEventListener('mousemove', onMouseMove, false);
+  }
+
+  function clearMovements () {
+    if (!isTouch) {
+      onMouseUp();
+    }
+
+    else {
+      window.removeEventListener('devicemotion', onMovements, false);
+    }
   }
 
   function applyTransforms(position) {
@@ -48,6 +50,29 @@ $(function () {
       '-moz-transform': 'translate3d(' + getRandomInt(-position*0.1, position*0.1) + 'px, ' + getRandomInt(-position, position) + 'px, 0)',
       'transform': 'translate3d(' + getRandomInt(-position*0.1, position*0.1) + 'px, ' + getRandomInt(-position, position) + 'px, 0)'
     });
+
+    if (i > erectionCount) {
+      $body.addClass('erected');
+
+    }
+
+    if (i > cumCount){
+      $body.addClass('came');
+
+      clearMovements();
+    }
+  }
+
+  function onMovements () {
+    var accelerationX = Math.floor(event.accelerationIncludingGravity.x);
+    var accelerationY = Math.floor(event.accelerationIncludingGravity.y);
+
+    if ( (lastX !== accelerationX) && lastY !== accelerationY ) {
+      applyTransforms(10);
+      lastX = accelerationX;
+      lastY = accelerationY;
+      i++;
+    }
   }
 
   if (!isTouch) {
@@ -56,12 +81,7 @@ $(function () {
   }
 
   else {
-    window.ondevicemotion = function(event) {
-      var accelerationX = event.accelerationIncludingGravity.x;
-      // var accelerationY = event.accelerationIncludingGravity.y;
-      // var accelerationZ = event.accelerationIncludingGravity.z;
-      alert(accelerationX );
-    };
+    window.addEventListener('devicemotion', onMovements, false);
   }
 
   function climax () {
